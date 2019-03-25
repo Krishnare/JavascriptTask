@@ -1,19 +1,5 @@
-'use strict';
-let _singleton = null;
-class fetchdata {
-    constructor (data) {
+import instance from './news';
 
-    }
+// instance.SingletonOperation();
 
-    SingletonOperation () {
-        console.log('Api Call')
-    }
-
-    GetSingletonData () {
-        return this.data
-    }
-}
-
-const instance = new fetchdata();
-
-export default instance;
+// const url = "https://newsapi.org/v1/articles?source=bbc-news&apiKey=720c0314e8b2423eb7e1ffca5a1eeeb1";
