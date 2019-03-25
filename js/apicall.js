@@ -1,10 +1,25 @@
+'use strict';
 
-export function apiCall(url){
-fetch(url)
-  .then(function(response) {
-    return response.json();
-  })
-  .then(function(myJson) {
-    console.log(JSON.stringify(myJson));
-  });
+class fetchdata {
+    constructor (data) {
+        if(!_singleton) {
+            this.data = data
+            _singleton = this
+        }
+        else
+            return _singleton
+        facade.log("Singleton class created")
+    }
+
+    SingletonOperation () {
+        facade.log('SingletonOperation')
+    }
+
+    GetSingletonData () {
+        return this.data
+    }
 }
+
+const instance = new fetchdata();
+
+export default instance;
