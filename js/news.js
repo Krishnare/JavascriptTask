@@ -1,13 +1,21 @@
 
 'use strict';
 let _singleton = null;
+
 class fetchdata {
     constructor (data) {
-
+        let globalData ={};
     }
 
-    SingletonOperation () {
-        console.log('Api Call')
+    SingletonOperation (url) {
+        fetch(url)
+        .then(function(response) {
+          return response.json();
+        })
+        .then(function(myJson) {
+          console.log(JSON.stringify(myJson));
+          globalData = JSON.stringify(myJson);
+        });
     }
 
     GetSingletonData () {
@@ -17,4 +25,4 @@ class fetchdata {
 
 const instance = new fetchdata();
 
-export default instance;
+export default (instance, globalData);
