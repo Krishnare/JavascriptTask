@@ -8,11 +8,11 @@ class fetchdata {
         }
         else
             return _singleton
-        facade.log("Singleton class created")
+        
     }
 
     SingletonOperation () {
-        facade.log('SingletonOperation')
+        
     }
 
     GetSingletonData () {
