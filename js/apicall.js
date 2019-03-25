@@ -1,4 +1,4 @@
-import instance from './news';
+import instance from './news.js';
 
 instance.SingletonOperation();
 
