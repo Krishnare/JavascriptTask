@@ -1,5 +1,5 @@
 'use strict';
-
+let _singleton = null;
 class fetchdata {
     constructor (data) {
         if(!_singleton) {
