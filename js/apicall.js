@@ -12,7 +12,7 @@ class fetchdata {
     }
 
     SingletonOperation () {
-        
+        console.log('Api Call')
     }
 
     GetSingletonData () {
