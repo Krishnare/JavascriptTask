@@ -17,15 +17,19 @@ class fetchdata {
         globalData = myJson;
         let elementId = document.getElementById('newsDetails');
         let returnHtml = ""
-        
+        let duplicateResolve = ""
          globalData.articles.map((value, index) =>{
-           
-            returnHtml = `<div>${value.author}</div><div>${value.title}</div><div>${value.description}</div><div>${value.urlToImage}</div><div>${value.publishedAt}</div>`
+           if(value.author !== value.author){
+            duplicateResolve
+           }else{
+            duplicateResolve = value.author
+           }
+            returnHtml += `<h1>${duplicateResolve}</h1><div>${value.title}</div><div>${value.description}</div><div>${value.urlToImage}</div><div>${value.publishedAt}</div>`
                
           
         });
         console.log(returnHtml)
-        elementId.insertAdjacentHTML('afterend', returnHtml)
+        elementId.insertAdjacentHTML('afterbegin', returnHtml)
         
         });
     }
