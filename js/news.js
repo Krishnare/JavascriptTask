@@ -14,8 +14,8 @@ class fetchdata {
         .then(function(myJson) {
         globalData = myJson;
         let elementId = document.getElementById('newsDetails');
-        let returnHtml = ""
-        let duplicateResolve = ""
+        let returnHtml = "";
+        let duplicateResolve = "";
          globalData.articles.map((value, index) =>{
             returnHtml += `<h1>${value.author}</h1><div>${value.title}</div><div>${value.description}</div><div class="imageContainer"><img src=${value.urlToImage} /></div><div>${value.publishedAt}</div>`;
         });
