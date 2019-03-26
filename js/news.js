@@ -20,7 +20,7 @@ class fetchdata {
         let duplicateResolve = ""
          globalData.articles.map((value, index) =>{
            if(value.author !== value.author){
-            duplicateResolve
+            duplicateResolve = ""
            }else{
             duplicateResolve = value.author
            }
