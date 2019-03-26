@@ -24,13 +24,10 @@ class fetchdata {
            }else{
             duplicateResolve = value.author
            }
-            returnHtml += `<h1>${duplicateResolve}</h1><div>${value.title}</div><div>${value.description}</div><div>${value.urlToImage}</div><div>${value.publishedAt}</div>`
-               
-          
+            returnHtml += `<h1>${duplicateResolve}</h1><div>${value.title}</div><div>${value.description}</div><div>${value.urlToImage}</div><div>${value.publishedAt}</div>`;
         });
-        console.log(returnHtml)
-        elementId.insertAdjacentHTML('afterbegin', returnHtml)
-        
+        console.log(returnHtml);
+        elementId.insertAdjacentHTML('afterbegin', returnHtml);
         });
     }
 
