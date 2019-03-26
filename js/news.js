@@ -16,8 +16,19 @@ class fetchdata {
         let elementId = document.getElementById('newsDetails');
         let returnHtml = "";
         let duplicateResolve = "";
+        let uniqueVal =[];
+        let storeAuthor=""
          globalData.articles.map((value, index) =>{
-            returnHtml += `<h1>${value.author}</h1><div>${value.title}</div><div>${value.description}</div><div class="imageContainer"><img src=${value.urlToImage} /></div><div>${value.publishedAt}</div>`;
+           uniqueVal = `<h1>${value.author}</h1>`
+           if(index > 0){
+              if(value.author === value.author){
+                uniqueVal = ""
+              }else{
+                uniqueVal = `<h1>${value.author}</h1>`
+              }
+           }
+          
+            returnHtml += `${uniqueVal}<div class="newsTitle">${value.title}</div><div class="newsDescription">${value.description}</div><div class="publishDate">${value.publishedAt}</div><div class="imageContainer"><a href="${value.url}"><img src=${value.urlToImage} /></a></div>`;
         });
         console.log(returnHtml);
         elementId.insertAdjacentHTML('afterbegin', returnHtml);
