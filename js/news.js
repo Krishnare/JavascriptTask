@@ -8,10 +8,10 @@ class fetchdata {
     }
     SingletonOperation (url) {
         fetch(url)
-        .then(function(response) {
+        .then(response => {
           return response.json();
         })
-        .then(function(myJson) {
+        .then(myJson => {
         globalData = myJson;
         let elementId = document.getElementById('newsDetails');
         let returnHtml = "";
@@ -23,12 +23,12 @@ class fetchdata {
            if(index > 0){
                 uniqueVal = "";
            }
-          
-            returnHtml += `${uniqueVal}<div class="newsTitle">${value.title}</div><div class="newsDescription">${value.description}</div><div class="publishDate">${value.publishedAt}</div><div class="imageContainer"><a href="${value.url}"><img src=${value.urlToImage} /></a></div>`;
+          returnHtml += `${uniqueVal}<div class="newsTitle">${value.title}</div><div class="newsDescription">${value.description}</div><div class="publishDate">${value.publishedAt}</div><div class="imageContainer"><a href="${value.url}" target="_blank"><img src=${value.urlToImage} /></a></div>`;
         });
         console.log(returnHtml);
         elementId.insertAdjacentHTML('afterbegin', returnHtml);
-        });
+        })
+        .catch(error => {console.log("Something went wrong on server")});
     }
     // GetSingletonData () {
         
